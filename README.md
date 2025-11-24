@@ -198,5 +198,8 @@ Thus, the program was implemented and executed successfully, and the required ou
   Stop
 # Program:
 # Output:
+[exp 5 c programming.pdf](https://github.com/user-attachments/files/23729319/exp.5.c.programming.pdf)
+
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
