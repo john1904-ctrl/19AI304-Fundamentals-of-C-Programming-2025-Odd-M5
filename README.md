@@ -1,205 +1,209 @@
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M5
-# IAPR-5- Module 5 - FoC
-## 9. Implementation of recursion.
-## 10. Implementation of programs using pointer arithmetic.
-# Ex.No:21
-  Implement a C program to demonstrate call by value and call by reference by swapping two integers using separate functions.
-# Date : 
-# Aim:
- To implement a C program that illustrates the difference between call by value and call by reference by swapping two integer variables using two separate functions.
-# Algorithm:
-### Step 1:
-  Start
-### Step 2: 
-  Include the standard input-output library: #include<stdio.h>.
-### Step 3:
-  Declare two functions:
-  - `swapv(int, int)` for swapping using call by value  
-  - `swapr(int *, int *)` for swapping using call by reference
-### Step 4: 
-  In the `main()` function, declare two integer variables `a` and `b` and initialize them with values (e.g., 10 and 20).
-### Step 5: 
-  Print the values of `a` and `b` before calling `swapv()`.
-### Step 6: 
-  Call the function `swapv(a, b)` and print the values of `a` and `b` after the function call to show that call by value does not change the original values.
-### Step 7: 
-  Print the values of `a` and `b` before calling `swapr()`.
-### Step 8: 
-  Call the function `swapr(&a, &b)` using the addresses of `a` and `b`.
-### Step 9: 
-  Print the values of `a` and `b` after the `swapr()` function call to show that call by reference successfully swaps the original values.
-### Step 10: 
-  Inside `swapv(x, y)` function:
-  - **Step 10.1:** Swap the values of `x` and `y` using a temporary variable.  
-  - **Step 10.2:** Print the swapped values (formal parameters).
-### Step 11: 
-  Inside `swapr(*x, *y)` function:
-  - **Step 11.1:** Swap the values pointed to by `x` and `y`.  
-  - **Step 11.2:** Print the swapped values (affects actual parameters).
-### Step 12: 
-  Stop
-# Program:
-# Output:
-# Result: 
-  Thus, the program was implemented and executed successfully, and the required output was obtained.
+EX-21-POINTERS
+# AIM:
+Write a C program to convert a 23.65 into 25 using pointer
+
+## ALGORITHM:
+1.	Declare a double variable to hold the floating-point number (23.65).
+2.	Declare a pointer to double to point to the address of the variable.
+3.	Use the pointer to modify the value to 25.0.
+4.	Print the modified value.
+
+## PROGRAM:
+
+```
+#include <stdio.h>
+
+int main() {
+    double num = 23.65;
+    double *ptr = &num;
+    *ptr = 25.0;
+    printf("Modified value: %.2f\n", num);
+
+    return 0;
+}
+```
+
+## OUTPUT:
+ 	
 
 
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M5
-# IAPR-5- Module 5 - FoC
-# Ex.No:22
-  Implement a C program to generate the Fibonacci series using a recursive function. The program should accept a positive integer n and display the first n terms of the Fibonacci sequence.
-# Date : 
-# Aim:
-  To implement a C program that uses a recursive function to generate and display the Fibonacci series for a given number of terms.
-# Algorithm:
-### Step 1:
-  Start
-### Step 2: 
-  Include the standard input-output library: #include<stdio.h>.
-### Step 3:
-  Declare a recursive function `fibo(int x)` that returns the Fibonacci number at position `x`.  
-### Step 4:
-  In the `main()` function, declare variables `n` and `i`.  
-### Step 5:
-  Prompt the user to enter a positive integer `n`.  
-### Step 6:
-  Read the value of `n`.  
-### Step 7:
-  Display a message indicating that the Fibonacci series of `n` terms will be printed.  
-### Step 8:
-  Use a `for` loop from `i = 0` to `i < n` to:  
-  - **Step 8.1:** Call the recursive function `fibo(i)`  
-  - **Step 8.2:** Print the returned Fibonacci value  
-### Step 9:
- Define the recursive function `fibo(x)` as follows:  
- - **Step 9.1:** If `x == 0` or `x == 1`, return `x`.  
- - **Step 9.2:** Otherwise, return `fibo(x - 1) + fibo(x - 2)`.  
-### Step 10:
-  Stop
-# Program:
-# Output:
-# Result: 
-Thus, the program was implemented and executed successfully, and the required output was obtained.
+
+![445978705-69d31b81-432a-456e-8b4b-cf4da277d9d6](https://github.com/user-attachments/assets/e2cdb3d2-58f9-4b38-a5b8-96eee72e3c11)
 
 
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M5
-# IAPR-5- Module 5 - FoC
-# Ex.No:23
-   Implement a C program to demonstrate recursion by printing a sequence of even or odd numbers from a given lower limit to an upper limit, with each recursive call progressing by 2.
-# Date : 
-# Aim:
-  To implement a C program that uses a recursive function to print even or odd numbers in a specified range based on the starting value provided by the user.
-# Algorithm:
-### Step 1:
-  Start
-### Step 2: 
-  Include the standard input-output library: #include<stdio.h>. 
-### Step 3:
-  Declare a recursive function `printEvenOdd(int cur, int limit)` to print numbers from `cur` to `limit` with a step of 2.
-### Step 4:
-  In the `main()` function, declare two integer variables: `lowerLimit` and `upperLimit`.
-### Step 5:
-  Prompt the user to enter the lower limit of the range.
-### Step 6:
-  Read and store the lower limit.
-### Step 7:
-  Prompt the user to enter the upper limit of the range.
-### Step 8:
-  Read and store the upper limit.
-### Step 9:
-  Display a message indicating that the even/odd numbers in the given range will be printed.
-### Step 10:
-  Call the recursive function `printEvenOdd(lowerLimit, upperLimit)`.
-### Step 11:
-  Inside the function `printEvenOdd(cur, limit)`:
-  - **Step 11.1:** If `cur > limit`, terminate the recursion.  
-  - **Step 11.2:** If `cur == limit`, print the value without a trailing comma.  
-  - **Step 11.3:** Otherwise, print the current value followed by a comma.  
-  - **Step 11.4:** Recursively call `printEvenOdd(cur + 2, limit)` to print the next number.
-### Step 12:
-  Stop
-# Program:
-# Output:
-# Result: 
-Thus, the program was implemented and executed successfully, and the required output was obtained.
+## RESULT:
+Thus the program to convert a 23.65 into 25 using pointer has been executed successfully.
+
+# EX-22-FUNCTIONS AND STORAGE CLASS
+
+## AIM:
+
+Write a C program to calculate the Product of first 12 natural numbers using Recursion
+
+## ALGORITHM:
+
+1.	Define a recursive function calculateProduct that takes an integer parameter n.
+2.	Return n multiplied by the result of the calculateProduct function called with n - 1.
+3.	Declare an integer variable n and an unsigned long long variable product.
+4.	Initialize n with the value 12 (for the first 12 natural numbers).
+5.	Call the calculateProduct function with n and store the result in the product variable.
+6.	Print the result, indicating it is the product of the first 12 natural numbers.
+
+## PROGRAM:
+
+```
+#include <stdio.h>
+
+int product(int n)
+{
+    if (n == 1)
+        return 1;
+    else
+        return n * product(n - 1);
+}
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Input must be a natural number\n");
+        return 1;
+    }
+
+    int result = product(n);
+    printf("Product is = %d\n", result);
+    return 0;
+}
+
+```
 
 
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M5
-# IAPR-5- Module 5 - FoC
-# Ex.No:24
-   Implement a C program that dynamically allocates memory using calloc(), accepts integer inputs from the user, computes their sum, and prints the sum.
-# Date : 
-# Aim:
-  To implement a C program that dynamically allocates memory for an array of integers using calloc(), accepts elements from the user, computes their sum, and displays the sum.
-# Algorithm:
-### Step 1:
-  Start
-### Step 2: 
-  Include the standard input-output library: #include<stdio.h>. 
-### Step 3:
-  a. Declare a pointer `ptr` to `int`.  
-  b. Declare integers `n`, `i`, and `sum` (initialize `sum = 0`).
-### Step 4:
-  Read the integer `n` from the user (the number of integers to be stored).
-### Step 5:
-  Use the `calloc()` function to allocate memory for `n` integers:  
-  `ptr = calloc(n, sizeof(int))`
-### Step 6:
-  If `ptr` is not `NULL`, continue to the next step; otherwise, memory allocation failed (the program exits).
-### Step 7:
-  For each `i` from `0` to `n - 1`:  
-  a. Read an integer from the user.  
-  b. Store it at memory location `ptr + i`.
-### Step 8:
-  For each `i` from `0` to `n - 1`:  
-  a. Access the value stored at `ptr + i`.  
-  b. Add it to `sum`.
-### Step 9:
-  Print the value of `sum`.
-### Step 10:
-  Call `free(ptr);` to release the memory allocated by `calloc()`.
-### Step 11:
-  Stop
-# Program:
-# Output:
-# Result: 
-Thus, the program was implemented and executed successfully, and the required output was obtained.
+## OUTPUT:
 
 
-# 19AI304-Fundamentals-of-C-Programming-2025-Odd-M5
-# IAPR-5- Module 5 - FoC
-# Ex.No:25
-   Implement a C program that reads a set of integers into an array and displays the array elements using a user-defined function.
-# Date : 
-# Aim:
-  To implement a C program that reads integers into an array and displays the elements using a user-defined function.
-# Algorithm:
-### Step 1:
-  Start
-### Step 2: 
-  Include the standard input-output library: #include<stdio.h>. 
-### Step 3:
-  Declare the function prototype: `void displayArray(int *arr, int size);`
-### Step 4:
-  In the `main()` function, declare an integer array of size 5 and a loop variable.
-### Step 5:
-  Prompt the user to enter the required number of integers.
-### Step 6:
-  Read the integers from the user and store them in the array using a loop.
-### Step 7:
-  Call the `displayArray` function, passing the array and its size as arguments.
-### Step 8:
-  Define the function `displayArray(int *arr, int size)` to print the array elements:  
-  - Loop through the array using either pointer arithmetic (`*(arr + i)`) or array indexing (`arr[i]`).  
-  - Print each element.
-### Step 9:
-  Return to the `main()` function after displaying the array.
-### Step 10:
-  Stop
-# Program:
-# Output:
-[exp 5 c programming.pdf](https://github.com/user-attachments/files/23729319/exp.5.c.programming.pdf)
+![445979231-2586a095-974f-4c49-b01c-bf78a0593201](https://github.com/user-attachments/assets/05acca35-47bd-4902-8729-2ff4f1b891bd)
+
+Thus the program has been executed successfully.
 
 
-# Result: 
-Thus, the program was implemented and executed successfully, and the required output was obtained.
+# EX-23-ARRAYS AND ITS OPERATIONS
+
+## AIM:
+
+Write C Program to find Sum of each row of a Matrix
+
+## ALGORITHM:
+
+1.	Declare and initialize the matrix with the desired values.
+2.	Create a loop to iterate through each row of the matrix.
+3.	Inside the loop, calculate the sum of the elements in each row.
+4.	Print the sum for each row.
+
+## PROGRAM:
+
+```
+#include <stdio.h>
+
+int main() {
+    int rows, cols;
+    scanf("%d %d", &rows, &cols);
+
+    int matrix[rows][cols];
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+    for (int i = 0; i < rows; i++) {
+        int rowSum = 0;
+        for (int j = 0; j < cols; j++) {
+            rowSum += matrix[i][j];
+        }
+        printf("The Sum of Elements of a Rows in a Matrix:  %d\n", rowSum);
+    }
+
+    return 0;
+}
+
+```
+## OUTPUT
+
+
+
+![445979725-4cd464fa-8924-4071-a59d-a21373144c40](https://github.com/user-attachments/assets/8fddd62c-e98c-4041-a0ea-87befe27a525)
+
+ 
+ 
+
+ ## RESULT
+
+Write C Program to find Sum of each row of a Matrix
+
+
+# EX -25 –DISPLAYING ARRAYS USING POINTERS
+## AIM
+
+Write a c program to read and display an array of any 6 integer elements using pointer
+
+## ALGORITHM
+Step 1: Start the program.
+Step 2: Declare the following:
+•	Integer variable i for iteration.
+•	Integer variable n to store the number of elements.
+•	Integer array arr[10] to hold up to 10 elements.
+•	Integer pointer parr and initialize it to point to the array arr.
+Step 3: Read the value of n (number of elements) from the user.
+Step 4: Loop from i = 0 to i < n:
+•	Read an integer value and store it in the address parr + i using pointer arithmetic.
+Step 5: Loop from i = 0 to i < n:
+•	Print the element at *(parr + i) using pointer dereferencing.
+Step 6: End the program.
+
+## PROGRAM
+
+
+```
+#include <stdio.h>
+
+int main() {
+    int arr[10], i, n;
+    int *parr;
+
+    // Step 3: Set number of elements to 6
+    n = 6;
+
+    // Step 2: Initialize pointer to point to array
+    parr = arr;
+
+    // Step 4: Read elements using pointer
+    printf("Enter %d integer elements:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", (parr + i));
+    }
+
+    // Step 5: Display elements using pointer
+    printf("The array elements are:\n");
+    for (i = 0; i < n; i++) {
+        printf("%d ", *(parr + i));
+    }
+```
+
+## OUTPUT
+
+
+![445981700-dd9740a2-562b-4940-a9ae-f470667f4d1f](https://github.com/user-attachments/assets/4ea9c8e2-31c3-42a4-9308-75a05429f29e)
+
+ 
+
+## RESULT
+
+
+Thus the C program to read and display an array of any 6 integer elements using pointer has been executed
+
+
+
+
+## RESULT:
+Thus the program to convert a 23.65 into 25 using pointer has been executed successfully.
